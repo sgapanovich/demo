@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await homePage.goto();
 });
 
-test.describe("Practice Software Testing Automation", async () => {
+test.describe("Login checks", async () => {
   test("Login with valid credentials", async ({ page }) => {
     const homePage = new HomePage(page);
     const signInPage = new SignInPage(page);
@@ -19,7 +19,7 @@ test.describe("Practice Software Testing Automation", async () => {
     await homePage.clickSignIn();
     await signInPage.login(username, password);
 
-   const myAccountPage = new MyAccountPage(page);
+    const myAccountPage = new MyAccountPage(page);
     await expect(myAccountPage.header).toBeVisible();
   });
 
