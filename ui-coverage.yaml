@@ -1,0 +1,20 @@
+home page:
+  - feature 1: true
+  - feature 2: false
+  - feature 3: false
+
+contact page:
+  - first name: false
+  - last name: false
+  - email address: false
+  - subject: false
+  - message: false
+  - attachment: false
+  - send button: false
+
+login page:
+  - username/email field: true
+  - password field: true
+  - login button: true
+  - forgot password link: false
+  - sign up link: false
