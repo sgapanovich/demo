@@ -11,7 +11,6 @@ export class HomePage {
     this.page = page;
     this.homeButton = page.getByTestId("nav-home");
     this.signInLink = page.getByTestId("nav-sign-in");
-
     this.categoriesDropdown = page.getByTestId("nav-categories");
     this.rentalsCategory = page.getByTestId("nav-rentals");
   }
