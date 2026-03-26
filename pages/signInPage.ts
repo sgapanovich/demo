@@ -1,19 +1,12 @@
-import { Page, Locator } from "@playwright/test";
+import { Page } from "@playwright/test";
 
 export class SignInPage {
-  readonly page: Page;
-  readonly emailInput: Locator;
-  readonly passwordInput: Locator;
-  readonly loginButton: Locator;
-  readonly errorMessage: Locator;
+  constructor(private readonly page: Page) { }
 
-  constructor(page: Page) {
-    this.page = page;
-    this.emailInput = page.getByTestId("email");
-    this.passwordInput = page.getByTestId("password");
-    this.loginButton = page.getByTestId("login-submit");
-    this.errorMessage = page.getByTestId("login-error");
-  }
+  readonly emailInput = this.page.getByTestId("email");
+  readonly passwordInput = this.page.getByTestId("password");
+  readonly loginButton = this.page.getByTestId("login-submit");
+  readonly errorMessage = this.page.getByTestId("login-error");
 
   async login(email: string, password: string) {
     await this.emailInput.fill(email);
