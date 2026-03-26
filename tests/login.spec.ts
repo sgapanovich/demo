@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 import { SignInPage } from "../pages/signInPage";
-import { MyAccountPage } from "../pages/account";
+import { MyAccountPage } from "../pages/myAccountPage";
 
-const username = process.env.USERNAME || "";
-const password = process.env.PASSWORD || "";
+const username = "sergeidemo2@email.com";
+const password = "CrazyPASS123!";
 
 test.beforeEach(async ({ page }) => {
   const homePage = new HomePage(page);

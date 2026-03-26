@@ -6,10 +6,9 @@
             "args": [
                 "@playwright/mcp@latest",
                 "--extension",
-                "--isolated",
+                "--isolated"
             ],
             "env": {}
         }
-    },
-    "inputs": []
+    }
 }
