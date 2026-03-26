@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 
-test.describe("Retantals check", async () => {
-    test("Login with valid credentials", async ({ page }) => {
+test.describe("Rentals check", async () => {
+    test("Navigate to rentals category", async ({ page }) => {
         const homePage = new HomePage(page);
         await homePage.goto();
 
