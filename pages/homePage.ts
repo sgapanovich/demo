@@ -6,8 +6,6 @@ export class HomePage {
   readonly signInLink: Locator;
   readonly categoriesDropdown: Locator;
   readonly rentalsCategory: Locator;
-  readonly excavator: Locator;
-  readonly itemTitle: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -16,13 +14,10 @@ export class HomePage {
 
     this.categoriesDropdown = page.getByTestId("nav-categories");
     this.rentalsCategory = page.getByTestId("nav-rentals");
-    this.excavator = page.getByAltText("Excavator");
-
-    this.itemTitle = page.getByTestId("product-name")
   }
 
   async goto() {
-    await this.page.goto("https://practicesoftwaretesting.com");
+    await this.page.goto("/");
   }
 
   async clickSignIn() {
