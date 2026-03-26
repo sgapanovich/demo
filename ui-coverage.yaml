@@ -4,13 +4,13 @@ home page:
   - feature 3: false
 
 contact page:
-  - first name: true
-  - last name: true
-  - email address: true
-  - subject: true
-  - message: true
+  - first name: false
+  - last name: false
+  - email address: false
+  - subject: false
+  - message: false
   - attachment: false
-  - send button: true
+  - send button: false
 
 login page:
   - username/email field: true
