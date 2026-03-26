@@ -20,4 +20,8 @@ export class SignInPage {
     await this.passwordInput.fill(password);
     await this.loginButton.click();
   }
+
+  async goto() {
+    await this.page.goto("/auth/login");
+  }
 }

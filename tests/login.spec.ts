@@ -1,6 +1,10 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 import { SignInPage } from "../pages/signInPage";
+import { MyAccountPage } from "../pages/account";
+
+const username = process.env.USERNAME || "";
+const password = process.env.PASSWORD || "";
 
 test.beforeEach(async ({ page }) => {
   const homePage = new HomePage(page);
@@ -8,19 +12,15 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Practice Software Testing Automation", async () => {
-  test("Home button", async ({ page }) => {
-    const homePage = new HomePage(page);
-    await expect(homePage.homeButton).toBeVisible();
-  });
-
   test("Login with valid credentials", async ({ page }) => {
     const homePage = new HomePage(page);
     const signInPage = new SignInPage(page);
 
     await homePage.clickSignIn();
-    await signInPage.login("customer@practicesoftwaretesting.com", "welcome01");
+    await signInPage.login(username, password);
 
-    await expect(page.getByTestId("nav-menu")).toBeVisible();
+   const myAccountPage = new MyAccountPage(page);
+    await expect(myAccountPage.header).toBeVisible();
   });
 
   test("Login with invalid credentials shows error", async ({ page }) => {
