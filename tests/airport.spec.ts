@@ -25,4 +25,12 @@ test.describe("airportCityCode", () => {
   test("returns undefined for unknown code", () => {
     expect(airportCityCode("XYZ")).toBeUndefined();
   });
+
+  test("returns undefined for empty string", () => {
+    expect(airportCityCode("")).toBeUndefined();
+  });
+
+  test("handles codes with surrounding whitespace as unknown", () => {
+    expect(airportCityCode(" ORD ")).toBeUndefined();
+  });
 });

@@ -41,6 +41,12 @@ const airportCityCodes: Record<string, string> = {
   MKE: "Milwaukee",
 };
 
+/**
+ * Returns the city name for a given airport code.
+ * @param code - The IATA airport code (e.g. "ORD", "JFK", "MIA")
+ * @returns The city name, or undefined if the code is not recognized
+ */
 export function airportCityCode(code: string): string | undefined {
+  if (!code) return undefined;
   return airportCityCodes[code.toUpperCase()];
 }
